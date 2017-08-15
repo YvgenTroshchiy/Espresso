@@ -10,7 +10,7 @@
     tools:context="com.troshchiy.espresso.MainActivity">
 
     <TextView
-        android:id="@+id/edt_name"
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
