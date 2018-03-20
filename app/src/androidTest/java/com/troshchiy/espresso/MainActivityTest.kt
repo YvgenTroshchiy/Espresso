@@ -1,10 +1,7 @@
 package com.troshchiy.espresso
 
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.action.ViewActions
-import android.support.test.espresso.action.ViewActions.click
+import android.support.test.espresso.action.ViewActions.*
 import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.filters.LargeTest
 import android.support.test.rule.ActivityTestRule
@@ -24,7 +21,8 @@ class MainActivityTest {
 
     @Test fun shouldPassNameToTheSecondScreen() {
         val name = "Name to pass"
-        Espresso.onView(ViewMatchers.withId(R.id.edt_name)).perform(ViewActions.typeText(name), ViewActions.closeSoftKeyboard())
+
+        R.id.edt_name.perform2(typeText(name), closeSoftKeyboard())
         R.id.btn_next perform click()
 
         R.id.tv_name check matches(withText(name))

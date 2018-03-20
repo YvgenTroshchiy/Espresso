@@ -7,6 +7,8 @@ import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
 
 infix fun Int.perform(action: ViewAction): ViewInteraction = Espresso.onView(ViewMatchers.withId(this)).perform(action)
-fun Int.perform(vararg actions: ViewAction): ViewInteraction = Espresso.onView(ViewMatchers.withId(this)).perform(*actions)
+fun Int.perform2(action1: ViewAction, action2: ViewAction): ViewInteraction = Espresso.onView(ViewMatchers.withId(this)).perform(action1, action2)
+
+//Espresso.onView(ViewMatchers.withId(R.id.edt_name)).perform(ViewActions.typeText(name), ViewActions.closeSoftKeyboard())
 
 infix fun Int.check(action: ViewAssertion): ViewInteraction = Espresso.onView(ViewMatchers.withId(this)).check(action)
