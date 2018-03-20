@@ -25,6 +25,7 @@ class MainActivityTest {
         R.id.edt_name.perform2(typeText(name), closeSoftKeyboard())
         R.id.btn_next perform click()
 
+        R.id.tv_name check isDisplayed
         R.id.tv_name check matches(withText(name))
     }
 }
