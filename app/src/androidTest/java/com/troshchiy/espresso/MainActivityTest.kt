@@ -13,7 +13,6 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-@Suppress("IllegalIdentifier") // To be able surround methods name with `
 class MainActivityTest {
 
     @Rule @JvmField val mainActivity = ActivityTestRule(MainActivity::class.java)
