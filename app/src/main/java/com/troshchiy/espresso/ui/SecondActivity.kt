@@ -1,7 +1,8 @@
-package com.troshchiy.espresso
+package com.troshchiy.espresso.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.troshchiy.espresso.R
 import kotlinx.android.synthetic.main.second_activity.*
 
 class SecondActivity : AppCompatActivity() {
