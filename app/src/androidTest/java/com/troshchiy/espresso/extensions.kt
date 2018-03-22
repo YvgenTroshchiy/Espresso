@@ -27,15 +27,15 @@ fun touchDownAndUp(clickView: View): ViewAction =
             override fun getDescription() = "Send touch down and up event"
 
             override fun perform(uiController: UiController, view: View) {
-                val x = (clickView.left + clickView.width / 2).toFloat()
-                val y = (clickView.top + clickView.height / 2).toFloat()
+                val x = clickView.left + clickView.width / 2
+                val y = clickView.top + clickView.height / 2
 
                 // Get view absolute position
                 val locationOnScreen = IntArray(2)
                 view.getLocationOnScreen(locationOnScreen)
 
                 // Offset coordinates by view position
-                val coordinates = floatArrayOf(x + locationOnScreen[0], y + locationOnScreen[1])
+                val coordinates = floatArrayOf(x.toFloat() + locationOnScreen[0], y.toFloat() + locationOnScreen[1])
                 val precision = floatArrayOf(1f, 1f)
 
                 // Send down event, pause, and send up
