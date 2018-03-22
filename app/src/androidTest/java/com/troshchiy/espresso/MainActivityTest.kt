@@ -1,10 +1,8 @@
 package com.troshchiy.espresso
 
-import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.filters.LargeTest
 import android.support.test.rule.ActivityTestRule
@@ -29,9 +27,7 @@ class MainActivityTest {
         R.id.edt_name.perform2(typeText(name), closeSoftKeyboard())
 
         val btnNext = mainActivityRule.activity.findViewById<Button>(R.id.btn_next)
-
-        onView(withId(R.id.constraintLayout)).perform(touchDownAndUp(btnNext))
-
+        R.id.constraintLayout perform touchDownAndUp(btnNext)
 //        R.id.btn_next perform click()
 
         R.id.tv_name check isDisplayed
