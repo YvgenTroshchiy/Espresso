@@ -21,12 +21,15 @@ fun Int.perform2(action1: ViewAction, action2: ViewAction): ViewInteraction = on
 
 infix fun Int.check(action: ViewAssertion): ViewInteraction = onView(withId(this)).check(action)
 
-fun touchDownAndUp(x: Float, y: Float): ViewAction =
+fun touchDownAndUp(clickView: View): ViewAction =
         object : ViewAction {
             override fun getConstraints(): Matcher<View> = isDisplayed()
             override fun getDescription() = "Send touch down and up event"
 
             override fun perform(uiController: UiController, view: View) {
+                val x = (clickView.left + clickView.width / 2).toFloat()
+                val y = (clickView.top + clickView.height / 2).toFloat()
+
                 // Get view absolute position
                 val locationOnScreen = IntArray(2)
                 view.getLocationOnScreen(locationOnScreen)

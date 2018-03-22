@@ -1,6 +1,5 @@
 package com.troshchiy.espresso
 
-import android.graphics.Rect
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import android.support.test.espresso.action.ViewActions.typeText
@@ -31,12 +30,7 @@ class MainActivityTest {
 
         val btnNext = mainActivityRule.activity.findViewById<Button>(R.id.btn_next)
 
-        onView(withId(R.id.constraintLayout)).perform(
-                touchDownAndUp(
-                        (btnNext.left + btnNext.width / 2).toFloat(),
-                        (btnNext.top + btnNext.height / 2).toFloat()
-                )
-        )
+        onView(withId(R.id.constraintLayout)).perform(touchDownAndUp(btnNext))
 
 //        R.id.btn_next perform click()
 
